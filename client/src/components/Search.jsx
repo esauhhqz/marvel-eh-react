@@ -19,9 +19,10 @@ const Search = () => {
   return (
     <div>
         <form onSubmit={handleSubmit}>
-          <div className='w-full h-full text-center p-5 cursor-pointer'>
-            <h1 className='p-5 text-[7.5vmin] font-bold'>PERSONAJES DE MARVEL</h1>  
-            <input className='border border-black rounded-md' onChange={e=>setCharacter(e.target.value)} type='text' />
+          <div className='w-full h-full text-center p-5 cursor-pointer text-white'>
+            <h1 className='p-5 text-[7.5vmin] font-bold'>Marvel's Heros</h1>  
+            <p>Type a Marvel's character name</p>
+            <input className='border border-white rounded-md' onChange={e=>setCharacter(e.target.value)} type='text' required />
             <button className='rounded-md bg-blue-500'>Buscar</button>
             <View characterInformation = {characterData.data} ></View>
           </div>          

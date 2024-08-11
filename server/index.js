@@ -36,9 +36,31 @@ app.post('/', async(req, res) => {
     console.log(info.data.data)    
 })
 
+// Obtener informacion completa del heroe
 app.post('/charInfo', async(req, res) => {
     const {id} = req.body
     const infoId = await axios.get(`https://gateway.marvel.com:443/v1/public/characters?id=${id}&ts=${ts}&apikey=${publicKey}&hash=${hash}`)
+    res.send(infoId.data)
+})
+
+// Obtener comics del heroe
+app.post('/charComicsInfo', async(req, res) => {
+    const {id} = req.body
+    const infoId = await axios.get(`https://gateway.marvel.com:443/v1/public/characters/${id}/comics?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
+    res.send(infoId.data)
+})
+
+// Obtener series del heroe
+app.post('/charSeriesInfo', async(req, res) => {
+    const {id} = req.body
+    const infoId = await axios.get(`https://gateway.marvel.com:443/v1/public/characters/${id}/series?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
+    res.send(infoId.data)
+})
+
+// Obtener Todas las historietas
+app.post('/comics', async(req, res) => {
+    const {offset} = req.body
+    const infoId = await axios.get(`https://gateway.marvel.com:443/v1/public/comics?limit=20&offset=${offset}&ts=${ts}&apikey=${publicKey}&hash=${hash}`)
     res.send(infoId.data)
 })
 

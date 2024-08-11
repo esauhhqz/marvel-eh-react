@@ -1,4 +1,69 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet');
+
+
+
+*{
+  background-color: black;
+}
+
+.under {
+  text-decoration: underline;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  width: 900px;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-top: 3rem;
+  margin-left: 5rem;
+}
+
+
+table {
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+tr {
+  border-bottom: 1px solid #ccc;
+}
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#page-no-dropdown {
+  width: fit-content;
+  border: 1px solid black;
+  padding: 2px;
+}
+select:focus-visible {
+  outline: none;
+  border: none;
+}
+button {
+  border: 1px solid black;
+  padding: 2px;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  html{
+    font-family: 'Raleway', sans-serif;
+  }
+}
+
+/*body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,8 +75,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+}*/
